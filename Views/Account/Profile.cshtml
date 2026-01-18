@@ -1,0 +1,36 @@
+﻿@page
+@model CookieNotesApp.Views.Account.ProfileModel
+@{
+}
+<main style="background-color: #FFF8F5; min-height: 100vh; display: flex; justify-content: left; align-items: flex-start; padding-top: 10vh;">
+
+    <!-- Like-contact card -->
+    <div style="background-color: #FCF2EF; padding: 2rem; width: 1174px; height: 667px;">
+
+        <h2 style="margin-bottom: 1.5rem;">ABOUT ME</h2>
+
+        <!-- Flex container for image + text -->
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+
+            <!-- Profile photo -->
+            <img src="/images/imagepfpholder.png" alt="Profile photo" style="width: 192px; height: 192px; object-fit: cover;">
+
+            <!-- Text content -->
+            <div style="text-align: left;">
+                <p>Username: <b>WantACookie</b></p>
+                <p>E-mail address: <b>WantACookie@example.com</b></p>
+                <p>Cookies received: <b>115</b></p>
+                <p>Friends: <b>3</b></p>
+            </div>
+
+        </div>
+
+        <!-- Buttons below -->
+        <div style="margin-top: 5rem; margin-left: 1rem; display: flex; justify-content: left; gap: 2rem;">
+            <a href="#" style="padding: 0.5rem 1.5rem; background-color: #F5EBDF; color: black; text-decoration: none; box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);">Log out</a>
+            <a href="#" style="padding: 0.5rem 1.5rem; background-color: #FEA8A7; color: black; text-decoration: none; box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);">Delete account</a>
+        </div>
+
+    </div>
+
+</main>
