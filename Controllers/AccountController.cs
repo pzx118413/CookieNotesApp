@@ -6,6 +6,7 @@ namespace CookieNotesApp.Controllers
     {
         public IActionResult Profile()
         {
+            ViewData["ActivePage"] = "Account";
             return View();
         }
     }

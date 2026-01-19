@@ -20,3 +20,39 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.cookie-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cookie-button {
+    background-color: #F5EBDF;
+    border: none;
+    padding: 0.3rem 0.9rem;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+}
+
+    .cookie-button:hover {
+        transform: translateY(1px);
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    }
+
+.cookie-count {
+    font-size: 24px;
+}
+.navbar-nav .nav-item .active-link {
+    background-color: #E6D9CB;
+    color: black !important;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+.nav-link.inactive-link {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
