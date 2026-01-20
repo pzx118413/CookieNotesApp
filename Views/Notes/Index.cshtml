@@ -2,3 +2,226 @@
 @model CookieNotesApp.Views.Notes.IndexModel
 @{
 }
+<main style="
+    background-color: #FFF8F5;
+    width: 1440px;
+    height: 1024px;
+    padding-top: 10vh;
+    padding-left: 1rem;
+    box-sizing: border-box;
+">
+
+    <!-- Page title -->
+    <p style="font-size: 57px; margin-bottom: 2rem;">
+        <b>Your recent note</b>
+    </p>
+
+    <!-- NOTE CARD -->
+    <div style="
+        background-color: #E6DDD3;
+        padding: 0.5rem;
+        width: 1376px;
+        height: 328px;
+        box-sizing: border-box;
+    ">
+
+        <!-- Note title -->
+        <p style="font-size: 20px; margin-bottom: 1rem;">
+            Unnamed note
+        </p>
+
+        <!-- Image + buttons row -->
+        <div style="display: flex; align-items: flex-start; gap: 2rem;">
+
+            <!-- Note image -->
+            <img src="/images/noteimageholder.png"
+                 alt="Note image"
+                 style="width: 404px; height: 255px; object-fit: cover;">
+
+            <!-- Buttons block -->
+            <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 1.5rem 2rem;">
+
+                <a href="#"
+   style="
+       width: 250px;
+       height: 55px;
+       font-size: 24px;
+       background-color: #E6D9CB;
+       color: black;
+       text-decoration: none;
+       box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   ">
+    Edit
+</a>
+
+                <a href="#"
+   style="
+       width: 250px;
+       height: 55px;
+       font-size: 24px;
+       background-color: #D6C4B0;
+       color: black;
+       text-decoration: none;
+       box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   ">
+    Publish
+</a>
+
+                <a href="#"
+   style="
+       width: 250px;
+       height: 55px;
+       font-size: 24px;
+       background-color: #E6D9CB;
+       color: black;
+       text-decoration: none;
+       box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   ">
+    Delete
+</a>
+
+                <a href="#"
+   style="
+       width: 250px;
+       height: 55px;
+       font-size: 24px;
+       background-color: #E6D9CB;
+       color: black;
+       text-decoration: none;
+       box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   ">
+    Duplicate
+</a>
+
+            </div>
+        </div>
+    </div>
+
+<section style="
+    margin-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+">
+
+    <!-- Header -->
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    ">
+        <h3 style="font-size: 32px; margin: 0;">All notes</h3>
+
+        <a href="#"
+           style="
+               width: 36px;
+               height: 36px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               background-color: #E6D9CB;
+               color: black;
+               text-decoration: none;
+               font-size: 24px;
+               box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+           ">
+            +
+        </a>
+    </div>
+
+    <!-- Notes list -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <div style="
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    background-color: #F6EEEB;
+    font-size: 20px;
+">
+
+    <!-- Title -->
+    <div style="flex: 1;">
+        Unnamed note
+    </div>
+
+    <!-- Date -->
+    <div style="flex: 1; color: #777;">
+        Last edited: 17.01.2026
+    </div>
+
+    <!-- Status -->
+    <div style="flex: 1; color: #777;">
+        Status: Private
+    </div>
+
+    <!-- Cookies (optional) -->
+    <div style="flex: 1;">
+        <!-- empty if private -->
+    </div>
+</div>
+<div style="
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    background-color: #F6EEEB;
+    font-size: 20px;
+">
+
+    <div style="flex: 1;">
+        Notes biology 01
+    </div>
+
+    <div style="flex: 1; color: #777;">
+        Last edited: 14.01.2026
+    </div>
+
+    <div style="flex: 1; color: #777;">
+        Status: Public
+    </div>
+
+    <div style="flex: 1;">
+        🍪 8
+    </div>
+</div>
+<div style="
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    background-color: #F6EEEB;
+    font-size: 20px;
+">
+
+    <div style="flex: 1;">
+        Note Programming 01
+    </div>
+
+    <div style="flex: 1; color: #777;">
+        Last edited: 08.01.2026
+    </div>
+
+    <div style="flex: 1; color: #777;">
+        Status: Public
+    </div>
+
+    <div style="flex: 1;">
+        🍪 107
+    </div>
+</div>
+
+</main>
