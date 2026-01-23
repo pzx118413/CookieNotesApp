@@ -1,0 +1,123 @@
+﻿@page
+@model CookieNotesApp.Views.Notes.EditorModel
+@{
+}
+<main style="background-color: #FFF8F5; width: 1440px; height: 1024px; justify-content: left; align-items: flex-start; padding-top: 2vh; box-sizing: border-box;">
+
+    <a asp-controller="Notes" asp-action="Index" style="color: #80695C; font-size: 20px;"> ← Go back to Notes page</a>
+    <div style=" padding: 2rem; background-color: #E6DDD3; width: 1354px; height: 852px; margin-top: 2rem; box-sizing: border-box;">
+        <p style="margin-bottom: 1rem; font-size: 20px;">Note title:</p>
+        <input type="text"
+               placeholder="Unnamed note"
+               style="
+                   width: 100%;
+                   height: 47px;
+                   width: 468px;
+                   background-color: #FAEFEF;
+                   font-size: 18px;
+                   padding: 0 1rem;
+                   box-sizing: border-box;
+                   border: none;
+                   margin-bottom: 1rem;
+               " />
+               <textarea placeholder="Start note here"
+                  style="
+                      width: 100%;
+                      width: 929px;
+                      height: 500px;
+                      background-color: #FAEFEF;
+                      font-size: 16px;
+                      padding: 1rem;
+                      box-sizing: border-box;
+                      border: none;
+                      resize: none;
+                      margin-bottom: 1rem;
+                  ">
+        </textarea>
+        <label style="font-size: 20px; display: block; margin-bottom: 0.5rem;">
+            Tags:
+        </label>
+
+        <input type="text"
+               placeholder="#biology #school #ideas"
+               style="
+                   width: 50%;
+                   height: 40px;
+                   font-size: 16px;
+                   padding: 0 1rem;
+                   box-sizing: border-box;
+                   border: none;
+                   margin-bottom: 2rem;
+               " />
+              <div style="
+    display: flex;
+    gap: 2rem;
+">
+
+    <a href="#"
+       style="
+           height: 55px;
+           width: 150px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: #F5EBDF;
+           color: black;
+           font-size: 20px;
+           text-decoration: none;
+           box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+       ">
+        Save
+    </a>
+
+    <a href="#"
+       style="
+           height: 55px;
+           width: 150px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: #F5EBDF;
+           color: black;
+           font-size: 20px;
+           text-decoration: none;
+           box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+       ">
+        Delete
+    </a>
+
+    <a href="#"
+       style="
+           height: 55px;
+           width: 150px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: #F5EBDF;
+           color: black;
+           font-size: 20px;
+           text-decoration: none;
+           box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+       ">
+        Duplicate
+    </a>
+
+    <a href="#"
+       style="
+           height: 55px;
+           width: 150px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: #D6C4B0;
+           color: black;
+           font-size: 20px;
+           text-decoration: none;
+           box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+       ">
+        Publish
+    </a>
+
+</div>
+    </div>
+

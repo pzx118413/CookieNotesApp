@@ -1,6 +1,5 @@
-﻿@page
-@model CookieNotesApp.Views.Notes.IndexModel
-@{
+﻿@{
+    ViewData["Title"] = "Notes";
 }
 <main style="
     background-color: #FFF8F5;
@@ -128,7 +127,7 @@
     ">
         <h3 style="font-size: 32px; margin: 0;">All notes</h3>
 
-        <a href="#"
+        <a asp-controller="Notes" asp-action="Editor"
            style="
                width: 36px;
                height: 36px;

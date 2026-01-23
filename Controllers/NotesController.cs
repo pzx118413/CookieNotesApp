@@ -9,5 +9,9 @@ namespace CookieNotesApp.Controllers
             ViewData["ActivePage"] = "Notes";
             return View();
         }
+        public IActionResult Editor()
+        {
+            return View();
+        }
     }
 }

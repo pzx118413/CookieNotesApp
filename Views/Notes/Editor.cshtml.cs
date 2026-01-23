@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CookieNotesApp.Views.Notes
 {
-    public class CreateModel : PageModel
+    public class EditorModel : PageModel
     {
         public void OnGet()
         {
