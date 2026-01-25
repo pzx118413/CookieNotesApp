@@ -19,12 +19,16 @@ A social note-taking application built with ASP.NET Core MVC. Users can write no
 
 ## How to Run
 
-1. Clone the repository.
-2. Run migrations to set up the database:
+1. Clone the repository
+2. Create the Migration
+   ```bash
+   dotnet ef migrations add AddRoles
+   ```
+3. Update the database
    ```bash
    dotnet ef database update
    ```
-3. Start the application:
+4. Start the application:
    ```bash
    dotnet run
    ```
