@@ -10,7 +10,7 @@ A social note-taking application built with ASP.NET Core MVC. Users can write no
 - **Social System:** Send friend requests, accept/decline friends, and view friend profiles.
 - **Cookie Economy:** "Give a cookie" to notes you enjoy (limited to 1 cookie per user per note).
 - **Dashboard:** A public feed showing notes from the community and your friends.
-
+- **Admin Moderation:** Admin functionality to moderate users and delete content.
 ## Tech Stack
 
 - **Framework:** ASP.NET Core 8 MVC
