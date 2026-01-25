@@ -8,6 +8,11 @@ namespace CookieNotesApp.Controllers
         {
             ViewData["ActivePage"] = "Account";
             return View();
+
         }
+            public IActionResult Index() => View();
+            public IActionResult Login() => View();
+            public IActionResult Register() => View();
+
     }
 }

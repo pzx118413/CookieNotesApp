@@ -1,4 +1,96 @@
-﻿@page
-@model CookieNotesApp.Views.Account.RegisterModel
-@{
+﻿@{
+    ViewData["Title"] = "Register";
 }
+
+<main style="
+    background-color: #FFF8F5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+
+    <div style="
+        width: 420px;
+        padding: 2.5rem;
+        background-color: #FFF4EE;
+        box-sizing: border-box;
+        text-align: center;
+    ">
+
+        <h2 style="margin-bottom: 2rem;">Create Account</h2>
+
+        <!-- Username -->
+        <label style="display: block; text-align: left; margin-bottom: 0.3rem;">
+            Username
+        </label>
+        <input type="text"
+               placeholder="Username (visible to other users)"
+               style="
+                   width: 100%;
+                   height: 36px;
+                   margin-bottom: 1rem;
+                   padding: 0 0.5rem;
+                   border: 1px solid #C9B6A7;
+               " />
+
+        <!-- Email -->
+        <label style="display: block; text-align: left; margin-bottom: 0.3rem;">
+            Email
+        </label>
+        <input type="email"
+               placeholder="Email address"
+               style="
+                   width: 100%;
+                   height: 36px;
+                   margin-bottom: 1rem;
+                   padding: 0 0.5rem;
+                   border: 1px solid #C9B6A7;
+               " />
+
+        <!-- Password -->
+        <label style="display: block; text-align: left; margin-bottom: 0.3rem;">
+            Password
+        </label>
+        <input type="password"
+               placeholder="Password"
+               style="
+                   width: 100%;
+                   height: 36px;
+                   margin-bottom: 1rem;
+                   padding: 0 0.5rem;
+                   border: 1px solid #C9B6A7;
+               " />
+
+        <!-- Confirm Password -->
+        <label style="display: block; text-align: left; margin-bottom: 0.3rem;">
+            Confirm password
+        </label>
+        <input type="password"
+               placeholder="Confirm password"
+               style="
+                   width: 100%;
+                   height: 36px;
+                   margin-bottom: 2rem;
+                   padding: 0 0.5rem;
+                   border: 1px solid #C9B6A7;
+               " />
+
+        <!-- Register button -->
+        <a asp-controller="Home" asp-action="Index"
+           style="
+               display: inline-flex;
+               justify-content: center;
+               align-items: center;
+               width: 120px;
+               height: 36px;
+               background-color: #E6D9CB;
+               color: black;
+               text-decoration: none;
+               box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+           ">
+            Register
+        </a>
+
+    </div>
+</main>

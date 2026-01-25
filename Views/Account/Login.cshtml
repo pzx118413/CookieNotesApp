@@ -1,4 +1,47 @@
-﻿@page
-@model CookieNotesApp.Views.Account.LoginModel
-@{
+﻿@{
+    ViewData["Title"] = "Login";
 }
+
+<main style="
+    background-color: #FFF8F5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+
+    <div style="
+        width: 400px;
+        padding: 3rem;
+        background-color: #FFF8F5;
+    ">
+
+        <h3 style="margin-bottom: 2rem;">
+            User Login
+        </h3>
+
+        <label style="font-size: 14px;">Email</label>
+        <input type="email"
+               style="width: 100%; margin-bottom: 1rem; padding: 0.4rem;" />
+
+        <label style="font-size: 14px;">Password</label>
+        <input type="password"
+               style="width: 100%; margin-bottom: 2rem; padding: 0.4rem;" />
+
+        <a asp-controller="Home" asp-action="Index"
+           style="
+               display: inline-flex;
+               justify-content: center;
+               align-items: center;
+               padding: 0.5rem 2rem;
+               background-color: #E6D9CB;
+               text-decoration: none;
+               color: black;
+               box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+           ">
+            Login
+        </a>
+
+    </div>
+
+</main>
