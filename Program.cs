@@ -48,7 +48,7 @@ using (var scope = app.Services.CreateScope())
         }
 
         // B. Assign Admin Role to a specific email
-        string adminEmail = "szczecinskikacper@outlook.com"; 
+        string adminEmail = "admin@admin.com"; 
         
         var adminUser = await userManager.FindByEmailAsync(adminEmail);
         if (adminUser != null)
