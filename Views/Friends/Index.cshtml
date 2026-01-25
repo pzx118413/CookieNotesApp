@@ -1,4 +1,167 @@
-﻿@page
-@model CookieNotesApp.Views.Friends.IndexModel
+﻿
 @{
 }
+<main style="
+    background-color: #FFF8F5;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+">
+
+    <!-- Top navigation -->
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    ">
+
+        <a asp-controller="Dashboard"
+           asp-action="Index"
+           style="color: #80695C; font-size: 16px; text-decoration: none;">
+            ← Go back to Dashboard page
+        </a>
+
+        <a asp-controller="Friends"
+           asp-action="Add"
+           style="
+               padding: 0.5rem 1.5rem;
+               background-color: #E6D9CB;
+               color: black;
+               font-size: 16px;
+               text-decoration: none;
+               box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+           ">
+            Add a friend!
+        </a>
+
+    </div>
+
+    <!-- Section title -->
+    <p style="margin-bottom: 1rem; font-size: 18px;">
+        Your friends:
+    </p>
+
+    <!-- Friends list + scrollbar wrapper -->
+    <div style="
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    ">
+
+        <!-- Friends list -->
+        <div style="
+            width: 500px;
+            max-height: 450px;
+            overflow-y: auto;
+            background-color: #F6EEEB;
+            padding: 0.75rem;
+            box-sizing: border-box;
+        ">
+
+            <!-- Friend row -->
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #E1C2C2;
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0.5rem;
+            ">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        background-color: #B7B7B7;
+                        border-radius: 50%;
+                    "></div>
+
+                    <span>SoCookedAtSchool01</span>
+                </div>
+
+                <a href="#"
+                   style="
+                       padding: 0.3rem 0.8rem;
+                       background-color: #E6D9CB;
+                       font-size: 14px;
+                       text-decoration: none;
+                       color: black;
+                   ">
+                    Unfriend
+                </a>
+            </div>
+
+            <!-- Friend row -->
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #E1C2C2;
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0.5rem;
+            ">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        background-color: #B7B7B7;
+                        border-radius: 50%;
+                    "></div>
+
+                    <span>CreativeCookieBaker</span>
+                </div>
+
+                <a href="#"
+                   style="
+                       padding: 0.3rem 0.8rem;
+                       background-color: #E6D9CB;
+                       font-size: 14px;
+                       text-decoration: none;
+                       color: black;
+                   ">
+                    Unfriend
+                </a>
+            </div>
+
+            <!-- Friend row -->
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #E1C2C2;
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0.5rem;
+            ">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        background-color: #B7B7B7;
+                        border-radius: 50%;
+                    "></div>
+
+                    <span>ShreckonLoL</span>
+                </div>
+
+                <a href="#"
+                   style="
+                       padding: 0.3rem 0.8rem;
+                       background-color: #E6D9CB;
+                       font-size: 14px;
+                       text-decoration: none;
+                       color: black;
+                   ">
+                    Unfriend
+                </a>
+            </div>
+
+            <!-- Empty placeholder rows -->
+            <div style="height: 48px; background-color: #F6EEEB; margin-bottom: 0.5rem;"></div>
+            <div style="height: 48px; background-color: #F6EEEB; margin-bottom: 0.5rem;"></div>
+            <div style="height: 48px; background-color: #F6EEEB; margin-bottom: 0.5rem;"></div>
+
+        </div>
+
+    </div>
+
+</main>

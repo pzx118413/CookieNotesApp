@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Add a friend";
+}
+<main style="
+    background-color: #FFF8F5;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+">
+
+    <!-- Back link -->
+    <a asp-controller="Friends"
+       asp-action="Index"
+       style="color: #80695C; font-size: 16px; text-decoration: none;">
+        ← Go back to Friends list
+    </a>
+
+    <!-- Page title -->
+    <h2 style="
+        margin-top: 3rem;
+        font-size: 28px;
+    ">
+        Find your friend!
+    </h2>
+
+    <!-- Search input -->
+    <input type="text"
+           placeholder="Type user name ..."
+           style="
+               margin-top: 1rem;
+               width: 520px;
+               height: 42px;
+               padding: 0 1rem;
+               font-size: 16px;
+               border-radius: 20px;
+               border: 1px solid #B8A39A;
+               box-sizing: border-box;
+           " />
+
+    <!-- Results label -->
+    <p style="
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 16px;
+    ">
+        Results:
+    </p>
+
+    <!-- Results list + scrollbar -->
+    <div style="
+        width: 520px;
+        max-height: 320px;
+        overflow-y: auto;
+        background-color: #F6EEEB;
+        padding: 0.75rem;
+        box-sizing: border-box;
+    ">
+
+        <!-- Result row (already added) -->
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #E1C2C2;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+        ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="
+                    width: 32px;
+                    height: 32px;
+                    background-color: #B7B7B7;
+                    border-radius: 50%;
+                "></div>
+
+                <span>SoCookedAtSchool01</span>
+            </div>
+
+            <span style="
+                padding: 0.3rem 0.8rem;
+                background-color: #B7A3A3;
+                font-size: 14px;
+            ">
+                Added
+            </span>
+        </div>
+
+        <!-- Result row -->
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #E1C2C2;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+        ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="
+                    width: 32px;
+                    height: 32px;
+                    background-color: #B7B7B7;
+                    border-radius: 50%;
+                "></div>
+
+                <span>SoCookedAtUni01</span>
+            </div>
+
+            <a href="#"
+               style="
+                   padding: 0.3rem 0.8rem;
+                   background-color: #E6D9CB;
+                   font-size: 14px;
+                   text-decoration: none;
+                   color: black;
+               ">
+                Add
+            </a>
+        </div>
+
+        <!-- Result row -->
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #E1C2C2;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+        ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="
+                    width: 32px;
+                    height: 32px;
+                    background-color: #B7B7B7;
+                    border-radius: 50%;
+                "></div>
+
+                <span>SoCookedNot01</span>
+            </div>
+
+            <a href="#"
+               style="
+                   padding: 0.3rem 0.8rem;
+                   background-color: #E6D9CB;
+                   font-size: 14px;
+                   text-decoration: none;
+                   color: black;
+               ">
+                Add
+            </a>
+        </div>
+
+        <!-- Empty placeholders -->
+        <div style="height: 40px; background-color: #F6EEEB; margin-bottom: 0.5rem;"></div>
+        <div style="height: 40px; background-color: #F6EEEB; margin-bottom: 0.5rem;"></div>
+
+    </div>
+
+</main>
