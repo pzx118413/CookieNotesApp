@@ -1,0 +1,33 @@
+@model IEnumerable<CookieNotesApp.Models.Note>
+@{
+    ViewData["Title"] = "Manage Notes";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; padding: 5vh 5rem;">
+    <h2 style="color: #80695C; margin-bottom: 2rem;">Admin: All Notes</h2>
+
+    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+        <a asp-action="Users" style="color: #998; text-decoration: none;">Users</a>
+        <a asp-action="Notes" style="font-weight: bold; text-decoration: underline; color: #80695C;">All Notes</a>
+    </div>
+
+    <div style="display: grid; gap: 1rem;">
+        @foreach (var note in Model)
+        {
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #E6DDD3; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h4 style="margin: 0; color: #5C4A40;">@note.Title</h4>
+                    <p style="margin: 0.5rem 0; color: #998; font-size: 14px;">
+                        By: <b>@(note.Author?.UserName ?? "Unknown")</b> | Visibility: @note.Visibility
+                    </p>
+                    <p style="margin: 0; color: #555;">@note.Content</p>
+                </div>
+                
+                <form asp-action="DeleteNote" method="post" onsubmit="return confirm('Permanently delete this note?');">
+                    <input type="hidden" name="id" value="@note.Id" />
+                    <button type="submit" style="background-color: #FEA8A7; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Delete</button>
+                </form>
+            </div>
+        }
+    </div>
+</main>

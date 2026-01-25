@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CookieNotesApp.Models.Note>
+@using CookieNotesApp.Models 
+
+@{
+    ViewData["Title"] = "My Notes";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; padding-top: 10vh; padding-left: 2rem; padding-right: 2rem; box-sizing: border-box;">
+
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 32px; margin: 0; color: #80695C;">My Notebook</h3>
+
+        <a asp-controller="Notes" asp-action="Editor"
+           style="width: 36px; height: 36px; display: flex; justify-content: center; align-items: center; background-color: #E6D9CB; color: black; text-decoration: none; font-size: 24px; box-shadow: 0 2px 0 rgba(0,0,0,0.2);">
+            +
+        </a>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+        
+        @if (!Model.Any())
+        {
+            <p style="font-size: 20px; color: #80695C;">You haven't written any notes yet.</p>
+        }
+        else
+        {
+            @foreach (var note in Model)
+            {
+                <div style="display: flex; align-items: center; padding: 1rem; background-color: #F6EEEB; font-size: 20px; box-shadow: 0 2px 0 rgba(0,0,0,0.1);">
+
+                    <div style="flex: 2; font-weight: bold; color: #80695C;">
+                        @note.Title
+                    </div>
+
+                    <div style="flex: 1; color: #777; font-size: 16px;">
+                        Edited: @note.CreatedAt.ToString("dd.MM.yyyy")
+                    </div>
+
+                    <div style="flex: 1; color: #777; font-size: 16px;">
+                        Status: 
+                        @if (note.Visibility == NoteVisibility.Public)
+                        {
+                            <span style="color: green;">Public</span>
+                        }
+                        else if (note.Visibility == NoteVisibility.FriendsOnly)
+                        {
+                            <span style="color: blue;">Friends Only</span>
+                        }
+                        else
+                        {
+                            <span>Private</span>
+                        }
+                    </div>
+
+                    <div style="flex: 1; font-size: 16px;">
+                        @(note.Visibility != NoteVisibility.Private ? $"🍪 {note.CookieCount}" : "")
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        
+                        <a asp-action="Editor" asp-route-id="@note.Id" style="color: #80695C; text-decoration: underline;">Edit</a>
+                        
+                        <form asp-action="Delete" asp-route-id="@note.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this note?');" style="margin: 0;">
+                            <button type="submit" style="background: none; border: none; cursor: pointer; color: #FEA8A7;">
+                                <i class="bi bi-trash3-fill" style="font-size: 20px;"></i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                </div>
+            }
+        }
+    </div>
+
+</main>

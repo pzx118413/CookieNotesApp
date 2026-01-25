@@ -1,0 +1,51 @@
+﻿@model CookieNotesApp.Models.Note
+
+@{
+    ViewData["Title"] = "Editor";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; padding: 2rem; box-sizing: border-box;">
+
+    <a asp-controller="Notes" asp-action="Index" style="color: #80695C; font-size: 20px; text-decoration: none;"> ← Go back to Notes page</a>
+
+    <form asp-action="Save" method="post" style="padding: 2rem; background-color: #E6DDD3; width: 100%; max-width: 1354px; margin-top: 2rem; box-sizing: border-box;">
+        
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserId" />
+        <input type="hidden" asp-for="CreatedAt" />
+        <input type="hidden" asp-for="CookieCount" />
+
+        <p style="margin-bottom: 1rem; font-size: 20px; color: #80695C;">Note title:</p>
+        <input type="text"
+               asp-for="Title"
+               placeholder="Unnamed note"
+               style="width: 100%; max-width: 468px; height: 47px; background-color: #FAEFEF; font-size: 18px; padding: 0 1rem; box-sizing: border-box; border: none; margin-bottom: 1rem;" />
+
+        <textarea asp-for="Content"
+                  placeholder="Start note here..."
+                  style="width: 100%; height: 500px; background-color: #FAEFEF; font-size: 16px; padding: 1rem; box-sizing: border-box; border: none; resize: none; margin-bottom: 1rem; font-family: sans-serif;"></textarea>
+
+        <label style="font-size: 20px; display: block; margin-bottom: 0.5rem; color: #80695C;">Tags:</label>
+        <input type="text"
+               asp-for="Tags"
+               placeholder="#biology #school #ideas"
+               style="width: 100%; max-width: 50%; height: 40px; font-size: 16px; padding: 0 1rem; background-color: #FAEFEF; border: none; margin-bottom: 2rem;" />
+
+        <div style="display: flex; gap: 2rem;">
+            
+            <button type="submit" style="height: 55px; width: 150px; background-color: #F5EBDF; color: black; font-size: 20px; border: none; cursor: pointer; box-shadow: 0 2px 0 rgba(0,0,0,0.2);">
+                Save
+            </button>
+
+            <div style="display: flex; flex-direction: column;">
+                <label style="font-size: 14px; color: #80695C; margin-bottom: 4px;">Who can see this?</label>
+                <select asp-for="Visibility" style="height: 40px; padding: 0 1rem; background-color: #FAEFEF; border: none; font-size: 16px;">
+                    <option value="0">Private (Only Me)</option>
+                    <option value="1">Friends Only</option>
+                    <option value="2">Public (Everyone)</option>
+                </select>
+            </div>
+        </div>
+
+    </form>
+</main>

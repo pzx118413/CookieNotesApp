@@ -1,0 +1,125 @@
+﻿@model IEnumerable<CookieNotesApp.Models.Friend>
+@{
+    ViewData["Title"] = "Friends";
+    var incomingRequests = ViewBag.Requests as List<CookieNotesApp.Models.Friend>;
+    var currentUserId = ViewBag.CurrentUserId as string;
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; padding: 5vh 5rem; box-sizing: border-box;">
+
+    <div style="max-width: 1020px; margin: 0 auto 4rem auto;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+            <div>
+                <h3 style="font-size: 32px; color: #80695C; margin: 0;">Social Circle</h3>
+                <p style="color: #998; margin: 0.5rem 0 0 0;">Connect with other cookie collectors</p>
+            </div>
+            <a asp-controller="Dashboard" asp-action="Index" style="color: #80695C; text-decoration: underline; font-size: 18px;">← Back to Dashboard</a>
+        </div>
+
+        <div style="background-color: #FCF2EF; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 0 rgba(0,0,0,0.05); display: flex; align-items: center; gap: 2rem;">
+            
+            <div style="flex: 1;">
+                <h4 style="margin: 0 0 0.5rem 0; color: #80695C; font-size: 20px;">Add a new friend</h4>
+                <p style="margin: 0; color: #998; font-size: 14px;">Enter their username to send a request</p>
+            </div>
+
+            <form asp-action="Add" method="post" style="flex: 2; display: flex; gap: 1rem; margin: 0;">
+                <input type="text" name="username" placeholder="e.g. CookieMaster99" required 
+                       style="flex: 1; padding: 1rem; background-color: #FFF; border: 2px solid #E6DDD3; border-radius: 8px; font-size: 16px; color: #80695C;">
+                
+                <button type="submit" 
+                        style="padding: 0 2rem; background-color: #E6D9CB; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: #5C4A40; box-shadow: 0 2px 0 rgba(0,0,0,0.1);">
+                    Send Request
+                </button>
+            </form>
+
+        </div>
+
+        @if (TempData["Message"] != null)
+        {
+            <div style="margin-top: 1rem; padding: 1rem; background-color: #E6D9CB; color: #5C4A40; border-radius: 8px; text-align: center;">
+                @TempData["Message"]
+            </div>
+        }
+
+    </div>
+
+    <div style="max-width: 1020px; margin: 0 auto;">
+
+        @if (incomingRequests != null && incomingRequests.Any())
+        {
+            <h4 style="color: #80695C; border-bottom: 2px solid #E6DDD3; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+                Pending Requests <span style="background-color: #FEA8A7; color: white; padding: 2px 8px; border-radius: 10px; font-size: 14px;">@incomingRequests.Count</span>
+            </h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                @foreach (var req in incomingRequests)
+                {
+                    <div style="background-color: #FFF; padding: 1.5rem; border-radius: 12px; border: 2px solid #E6DDD3; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background-color: #E6DDD3; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">👋</div>
+                            <div>
+                                <p style="margin: 0; font-weight: bold; color: #80695C; font-size: 18px;">@req.Requester?.UserName</p>
+                                <p style="margin: 0; font-size: 14px; color: #998;">Wants to be friends</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 0.5rem;">
+                            <form asp-action="Accept" method="post" style="margin: 0;">
+                                <input type="hidden" name="id" value="@req.Id" />
+                                <button type="submit" style="background-color: #D6C4B0; padding: 0.5rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; color: white; font-weight: bold;">Accept</button>
+                            </form>
+                            <form asp-action="Remove" method="post" style="margin: 0;">
+                                <input type="hidden" name="id" value="@req.Id" />
+                                <button type="submit" style="background-color: #FAEFEF; padding: 0.5rem 1rem; border: 1px solid #FEA8A7; border-radius: 6px; cursor: pointer; color: #FEA8A7; font-weight: bold;">Decline</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        <h4 style="color: #80695C; border-bottom: 2px solid #E6DDD3; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">My Friends</h4>
+
+        @if (!Model.Any())
+        {
+            <div style="text-align: center; padding: 3rem; color: #998; border: 2px dashed #E6DDD3; border-radius: 12px;">
+                <p style="font-size: 20px;">You haven't added any friends yet.</p>
+                <p>Try adding someone to test it out!</p>
+            </div>
+        }
+        else
+        {
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem;">
+                @foreach (var f in Model)
+                {
+                    // Logic to find the "other" person
+                    var friendUser = (f.RequesterId == currentUserId) ? f.Receiver : f.Requester;
+
+                    <div style="background-color: #E6DDD3; padding: 2rem 1rem; border-radius: 16px; text-align: center; transition: transform 0.2s; box-shadow: 0 4px 0 rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center;">
+                        
+                        <img src="@friendUser?.ProfileImageUrl" 
+                             alt="@friendUser?.UserName"
+                             style="width: 96px; height: 96px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; border: 4px solid #FFF;">
+                        
+                        <h5 style="margin: 0 0 0.5rem 0; color: #5C4A40; font-size: 20px;">@friendUser?.UserName</h5>
+                        
+                        <div style="display: inline-block; background-color: #FFF; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 14px; color: #80695C; margin-bottom: 1.5rem;">
+                            🍪 @friendUser?.CookiesReceived Cookies
+                        </div>
+
+                        <form asp-action="Remove" method="post" onsubmit="return confirm('Are you sure you want to remove this friend?');" style="margin-top: auto;">
+                            <input type="hidden" name="id" value="@f.Id" />
+                            <button type="submit" style="background: none; border: none; color: #FEA8A7; text-decoration: underline; cursor: pointer; font-size: 14px;">
+                                Remove Friend
+                            </button>
+                        </form>
+
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+</main>

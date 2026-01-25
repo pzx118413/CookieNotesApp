@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+    <div style="width: 420px; padding: 2.5rem; background-color: #FFF4EE; box-sizing: border-box; text-align: center; box-shadow: 0 4px 0 rgba(0,0,0,0.05);">
+
+        <h2 style="margin-bottom: 2rem; color: #80695C;">Create Account</h2>
+
+        <form asp-action="Register" method="post">
+            
+            <div asp-validation-summary="ModelOnly" style="color: #FEA8A7; font-size: 14px; margin-bottom: 1rem;"></div>
+
+            <label style="display: block; text-align: left; margin-bottom: 0.3rem; color: #80695C;">Username</label>
+            <input type="text" name="username" placeholder="Username (visible to other users)" required
+                   style="width: 100%; height: 36px; margin-bottom: 1rem; padding: 0 0.5rem; border: 1px solid #C9B6A7; background-color: #FFF;" />
+
+            <label style="display: block; text-align: left; margin-bottom: 0.3rem; color: #80695C;">Email</label>
+            <input type="email" name="email" placeholder="Email address" required
+                   style="width: 100%; height: 36px; margin-bottom: 1rem; padding: 0 0.5rem; border: 1px solid #C9B6A7; background-color: #FFF;" />
+
+            <label style="display: block; text-align: left; margin-bottom: 0.3rem; color: #80695C;">Password</label>
+            <input type="password" name="password" placeholder="Password" required
+                   style="width: 100%; height: 36px; margin-bottom: 1rem; padding: 0 0.5rem; border: 1px solid #C9B6A7; background-color: #FFF;" />
+
+            <label style="display: block; text-align: left; margin-bottom: 0.3rem; color: #80695C;">Confirm password</label>
+            <input type="password" name="confirmPassword" placeholder="Confirm password"
+                   style="width: 100%; height: 36px; margin-bottom: 2rem; padding: 0 0.5rem; border: 1px solid #C9B6A7; background-color: #FFF;" />
+
+            <button type="submit"
+                    style="display: inline-flex; justify-content: center; align-items: center; width: 120px; height: 36px; background-color: #E6D9CB; color: black; border: none; cursor: pointer; box-shadow: 0 2px 0 rgba(0,0,0,0.2); font-size: 16px;">
+                Register
+            </button>
+
+        </form>
+
+        <div style="margin-top: 1.5rem;">
+            <a asp-action="Login" style="color: #998; font-size: 14px; text-decoration: underline;">Already have an account?</a>
+        </div>
+
+    </div>
+</main>

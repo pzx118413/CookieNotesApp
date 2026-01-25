@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+    <div style="width: 400px; padding: 3rem; background-color: #FFF8F5;">
+
+        <h3 style="margin-bottom: 2rem; text-align: center; color: #80695C;">
+            User Login
+        </h3>
+
+        <form asp-action="Login" method="post">
+
+            <div asp-validation-summary="ModelOnly" style="color: #FEA8A7; font-size: 14px; text-align: center; margin-bottom: 1rem;"></div>
+
+            <label style="font-size: 14px; color: #80695C;">Username</label>
+            <input type="text" name="username" required
+                   style="width: 100%; margin-bottom: 1rem; padding: 0.4rem; border: 1px solid #C9B6A7; background-color: #FAEFEF;" />
+
+            <label style="font-size: 14px; color: #80695C;">Password</label>
+            <input type="password" name="password" required
+                   style="width: 100%; margin-bottom: 2rem; padding: 0.4rem; border: 1px solid #C9B6A7; background-color: #FAEFEF;" />
+
+            <div style="text-align: center;">
+                <button type="submit"
+                        style="display: inline-flex; justify-content: center; align-items: center; padding: 0.5rem 2rem; background-color: #E6D9CB; border: none; cursor: pointer; color: black; box-shadow: 0 2px 0 rgba(0,0,0,0.2); font-size: 16px;">
+                    Login
+                </button>
+            </div>
+
+        </form>
+        
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a asp-controller="Home" asp-action="Index" style="color: #998; font-size: 14px; text-decoration: underline;">Back to Home</a>
+        </div>
+
+    </div>
+
+</main>

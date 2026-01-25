@@ -1,0 +1,47 @@
+@model IEnumerable<CookieNotesApp.Models.User>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; padding: 5vh 5rem;">
+    <h2 style="color: #80695C; margin-bottom: 2rem;">Admin: Manage Users</h2>
+    
+    @if(TempData["Error"] != null)
+    {
+        <div style="background-color: #FEA8A7; padding: 1rem; margin-bottom: 1rem; border-radius: 8px;">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+        <a asp-action="Users" style="font-weight: bold; text-decoration: underline; color: #80695C;">Users</a>
+        <a asp-action="Notes" style="color: #998; text-decoration: none;">All Notes</a>
+    </div>
+
+    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 0 rgba(0,0,0,0.05);">
+        <thead style="background-color: #E6D9CB;">
+            <tr>
+                <th style="padding: 1rem; text-align: left;">Username</th>
+                <th style="padding: 1rem; text-align: left;">Email</th>
+                <th style="padding: 1rem; text-align: center;">Cookies</th>
+                <th style="padding: 1rem; text-align: right;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 1rem;">@user.UserName</td>
+                    <td style="padding: 1rem;">@user.Email</td>
+                    <td style="padding: 1rem; text-align: center;">@user.CookiesReceived</td>
+                    <td style="padding: 1rem; text-align: right;">
+                        <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Delete this user and ALL their data?');">
+                            <input type="hidden" name="id" value="@user.Id" />
+                            <button type="submit" style="color: #FEA8A7; border: none; background: none; cursor: pointer; text-decoration: underline;">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

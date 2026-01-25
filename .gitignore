@@ -1,0 +1,24 @@
+# --- Build Output ---
+[Bb]in/
+[Oo]bj/
+
+# --- Database & Logs ---
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# --- Visual Studio & Code User Settings ---
+.vscode/
+.vs/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.launch
+
+# --- Operating System Junk ---
+.DS_Store
+Thumbs.db
+Desktop.ini

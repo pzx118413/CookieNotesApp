@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+
+<main style="background-color: #FFF8F5; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+    <div style="width: 550px; padding: 3rem; background-color: #FFF8F5; text-align: center; position: relative;">
+
+        <h2 style="margin-bottom: 1rem; color: #80695C;">
+            🍪 Welcome to Notes App 🍪
+        </h2>
+
+        <p style="margin-bottom: 3rem; font-size: 14px; color: #998;">
+            Create notes bite by bite.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 2rem;">
+            <a asp-controller="Account" asp-action="Login"
+               style="padding: 0.5rem 2rem; background-color: #E6D9CB; text-decoration: none; color: black; box-shadow: 0 2px 0 rgba(0,0,0,0.2);">
+                Login
+            </a>
+
+            <a asp-controller="Account" asp-action="Register"
+               style="padding: 0.5rem 2rem; background-color: #E6D9CB; text-decoration: none; color: black; box-shadow: 0 2px 0 rgba(0,0,0,0.2);">
+                Register
+            </a>
+        </div>
+
+    </div>
+
+</main>
